@@ -6,9 +6,21 @@ const api = axios.create({
 });
 
 export const newFetch = async() => {
-  const res=await api.get("/posts");
-  return res.status === 200 ? res.data  : [];
+ try {
+   const res = await api.get("/posts");
+   return res.status === 200 ? res.data : [];
+ } catch (error) {
+  console.log(error);
+ }
    
 
 };
 
+export const newfetchDetails= async (id)=>{
+  try {
+    const res = await api.get(`/posts/${id}`);
+    return res.status === 200 ? res.data : [];
+  } catch (error) {
+    console.log(error)
+  }
+}

@@ -5,6 +5,7 @@ import OldFetch from "./Pages/OldFetch";
 import ReactQuery from "./Pages/ReactQuery";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import ReactQueryDetails from "./Pages/ReactQueryDetails";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/react-query",
         element: <ReactQuery />,
+      },
+      {
+        path: "/react-query/:id",
+        element: <ReactQueryDetails />,
       },
     ],
   },
